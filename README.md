@@ -70,6 +70,7 @@ Benchmark.stmTest     avgt    5  992.872 ± 71.084  us/op
 # Links
 - [Implementing STM in Java](https://www.slideshare.net/mishadoff/implementing-stm-in-java)
 - [stm-java](https://github.com/epam-mooc/stm-java)
+- [Wikipedia: Software transactional memory](https://en.wikipedia.org/wiki/Software_transactional_memory)
 - [软件事务内存：借鉴数据库的并发经验](https://time.geekbang.org/column/article/99251)
 
 ## License
