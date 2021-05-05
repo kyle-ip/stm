@@ -22,20 +22,22 @@ import java.util.concurrent.Executors;
 @DisplayName("STM 功能测试")
 public class STMConcurrentTest {
 
-    private AccountAtomic a;
+    private AccountAtomic accountAtomic;
+
+    private AccountSTM accountSTM;
 
     @BeforeEach
     void init() {
-        a = new AccountAtomic(0L);
+        accountAtomic = new AccountAtomic(0L);
+        accountSTM = new AccountSTM(0L);
     }
 
     /**
-     *
      * @param args
      * @throws InterruptedException
      */
     @ParameterizedTest
-    @DisplayName("测试并发设值")
+    @DisplayName("测试并发设值（线程数，设值，期望值）")
     @CsvSource({
         "1000, 1, 1000",
         "100, 10, 1000",
@@ -51,13 +53,13 @@ public class STMConcurrentTest {
         ExecutorService executorService = Executors.newCachedThreadPool();
         for (int i = 0; i < threadSize; i++) {
             executorService.execute(() -> {
-                AccountAtomic x = new AccountAtomic(amount);
-                x.transferTo(a, amount);
+                AccountSTM x = new AccountSTM(amount);
+                x.transferTo(accountSTM, amount);
                 countDownLatch.countDown();
             });
         }
         countDownLatch.await();
         executorService.shutdown();
-        Assertions.assertEquals((Long) expected, a.getBalance());
+        Assertions.assertEquals((Long) expected, accountSTM.getBalance());
     }
 }
