@@ -1,2 +1,2 @@
 # stm
-STM (Software Transactional Memory) implemented in Java
+STM (Software Transactional Memory) implemented in Java.
