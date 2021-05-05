@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
 @Measurement(iterations = 5, time = 1)
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
-public class STMBenchmarkTest {
+public class BenchmarkTest {
 
     private AccountSTM accountSTM;
 
@@ -85,7 +85,7 @@ public class STMBenchmarkTest {
      */
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
-            .include(STMBenchmarkTest.class.getSimpleName())
+            .include(BenchmarkTest.class.getSimpleName())
             .forks(1)
             .result("result.json")
             .build();

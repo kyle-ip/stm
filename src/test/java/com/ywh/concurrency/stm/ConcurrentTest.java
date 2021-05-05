@@ -1,5 +1,6 @@
 package com.ywh.concurrency.stm;
 
+import com.ywh.concurrency.stm.model.Account;
 import com.ywh.concurrency.stm.model.AccountAtomic;
 import com.ywh.concurrency.stm.model.AccountSTM;
 import org.junit.jupiter.api.Assertions;
@@ -20,7 +21,7 @@ import java.util.concurrent.Executors;
  * @since 5/5/2021
  */
 @DisplayName("STM 功能测试")
-public class STMConcurrentTest {
+public class ConcurrentTest {
 
     private AccountAtomic accountAtomic;
 
@@ -62,4 +63,5 @@ public class STMConcurrentTest {
         executorService.shutdown();
         Assertions.assertEquals((Long) expected, accountSTM.getBalance());
     }
+
 }
