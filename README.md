@@ -7,7 +7,7 @@
 [STM (Software Transactional Memory)](https://en.wikipedia.org/wiki/Software_transactional_memory) is one kind of concurrency control mechanism like locks or actors, inspired by 
 Database System Transaction 'ACID' (Atomicity, Consistency, Isolation, Durability). 
 
-STM is a strategy implemented in software, ant This is a demo implemented in Java.
+STM is a strategy implemented in software, ant this is a demo implemented in Java.
 
 ## Quick Start
 1. fork this repository and clone.
