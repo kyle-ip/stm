@@ -1,5 +1,5 @@
 # STM
-
+[![License](https://img.shields.io/badge/license-MIT-4EB1BA.svg)]()
 [![Java](https://img.shields.io/badge/language-Java-orange.svg)]()
 
 > since 2021-05-05 18:20
@@ -7,7 +7,7 @@
 [STM (Software Transactional Memory)](https://en.wikipedia.org/wiki/Software_transactional_memory) is one kind of concurrency control mechanism like locks or actors, inspired by 
 Database System Transaction 'ACID' (Atomicity, Consistency, Isolation, Durability). 
 
-STM is a strategy implemented in software, ant this is a demo implemented in Java.
+STM is a strategy implemented in software, and this is a demo implemented in Java.
 
 ## Quick Start
 1. fork this repository and clone.
