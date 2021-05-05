@@ -4,16 +4,16 @@
 
 > since 2021-05-05 18:20
 
-STM (Software Transactional Memory) is one kind of concurrency control mechanism like locks or actors, inspired by 
+[STM (Software Transactional Memory)](https://en.wikipedia.org/wiki/Software_transactional_memory) is one kind of concurrency control mechanism like locks or actors, inspired by 
 Database System Transaction 'ACID' (Atomicity, Consistency, Isolation, Durability). 
 
-This is an STM demo implemented in Java.
+STM is a strategy implemented in software, ant This is a demo implemented in Java.
 
 ## Quick Start
 1. fork this repository and clone.
 2. run example located under test package.
 
-You can also create your test case like this:
+You can also create your test cases like this:
 ```java
 public class Account {
     STMTransaction<Long> tx = new STMTransaction<>();
@@ -43,7 +43,7 @@ public class Account {
         );
     }
     
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         Account account = new Account(0L);
         final CountDownLatch countDownLatch = new CountDownLatch(1000);
         ExecutorService executorService = Executors.newCachedThreadPool();
@@ -60,7 +60,7 @@ public class Account {
 }
 ```
 
-Simple micro benchmarking with JMH (compared to Atomic API):
+simple micro benchmarking with JMH (compared to Atomic API):
 ```text
 Benchmark             Mode  Cnt    Score    Error  Units
 Benchmark.atomicTest  avgt    5  883.999 ± 22.208  us/op
@@ -68,6 +68,7 @@ Benchmark.stmTest     avgt    5  992.872 ± 71.084  us/op
 ```
 
 # Links
+If you want to learn more about STM and other concurrency models, please click in the following links: 
 - [Implementing STM in Java](https://www.slideshare.net/mishadoff/implementing-stm-in-java)
 - [stm-java](https://github.com/epam-mooc/stm-java)
 - [Wikipedia: Software transactional memory](https://en.wikipedia.org/wiki/Software_transactional_memory)
